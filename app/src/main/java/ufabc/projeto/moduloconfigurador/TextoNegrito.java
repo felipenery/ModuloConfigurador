@@ -30,7 +30,7 @@ public class TextoNegrito extends ConfigAll implements TextToSpeech.OnInitListen
         simBotao = (Button) findViewById(R.id.simId);
         naoBotao = (Button) findViewById(R.id.naoId);
         testeBotao = (Button) findViewById(R.id.testeId);
-
+        linearLayout = (LinearLayout) findViewById(R.id.layoutId);
 
         //cor texto e fundo
 
