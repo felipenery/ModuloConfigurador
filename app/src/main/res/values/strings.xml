@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Modulo Configurador</string>
+     <string name="teste">
+        teste&#160;
+    </string>
+    <string name="texto_leitor_tela">Lê os itens da tela em voz alta \n
+\n
+- Toque uma vez para selecionar um item \n
+\n
+- Toque duas vezes para ativar o item selecionado \n
+\n
+- Passe três dedos para rolar a tela \n </string>
+    <string name="texto_zoom">Amplia a tela ou uma parte dela.
+- Toque 2 vezes com 3 dedos para ativar ou desativar o zoom.
+- Arraste 3 dedos para navegar pela tela quando o zoom está ativado.
+- Toque e arraste 2 vezes com 3 dedos para ajustar a porcentagem de aumento do zoom.
+- Toque 3 vezes com 3 dedos para abrir o menu do zoom.
+ </string>
+     <string name="texto_controle_zoom">O controle é uma alternativa para acesso rápido aos controles do zoom.
+         \n
+- Toque 1 vez para  mostrar o menu do zoom.
+         \n
+- Toque 2 vezes para ativar ou desativar o zoom.
+         \n
+- Com o zoom ativado, arraste o círculo do controle para deslocar o zoom pelo conteúdo.
+ </string>
+    <string-array name="array">
+        <item>Zoom</item>
+        <item>Reconhecimento de fala
+Usa o microfone do telefone para
+gravar áudio e converter em texto
+</item>
+        <item> Contraste</item>
+        <item> Negrito</item>
+        <item> Adicionar pronúncia ao leitor de tela</item>
+        <item> Trocar cor do fundo</item>
+        <item> Trocar cor da letra</item>
+        <item> Ativar/desativar leitor de tela</item>
+        <item> Brilho da tela</item>
+        <item> Ponto branco</item>
+        <item> Abrir lupa</item>
+        <item> Velocidade da fala</item>
+        <item> Tom da fala</item>
+        <item> Cor do destaque</item>
+        <item> Falar dicas de caracteres</item>
+        <item> Falar caracteres</item>
+        <item> Alterar filtro de cor da tela</item>
+        <item> Alterar filtro de cor do zoom</item>
+        <item> Ativar flash LED para alertas</item>
+        <item> Reduzir movimento</item>
+        <item> Aumentar/Diminuir letra</item>
+    </string-array>
+
+    <string name="texto_ativar_lupa">A lupa permite que você use a câmera do dispositivo para aumentar objetos rapidamente.
+Se decidir ativá-la, aperte o botão de início 3 vezes quando quiser que ela seja aberta.
+.
+ </string>
+    <string name="texto_sempre_ativo">O assistente pessoal fornece o retorno de voz, mesmo quando os toques estiverem silenciados.
+ </string>
+    <string name="texto_seletor">Silencia o retorno de voz do assistente pessoal quando os toques também estiverem silenciados. O usuário ainda ouvirá o retorno de voz ao utilizar o "E aí, Siri"/”Ok,Google” ou quando estiver conectado a um dispositivo Bluetooth, fones de ouvido ou CarPlay.
+ </string>
+    <string name="texto_handsfree">O assistente pessoal fornecerá retorno de voz somente quando o usuário utilizar o "E aí, Siri"/”Ok, Google” ou quando estiver conectado a um dispositivo Bluetooth, fones de ouvido ou CarPlay.
+ </string>
+
+    <string name="texto_instrucao">Instruções para usar os atalhos de acessibilidade.
+ </string>
+
+        <string name="texto_sublinhado">  <u> Sublinhar </u>
+ </string>
+    <string name="title_activity_texto_sempre_ativo">TextoSempreAtivo</string>
+    <string name="title_activity_configurador">Configurador</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+
+</resources>

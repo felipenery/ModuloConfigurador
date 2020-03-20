@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollId"
+    android:layout_height="match_parent">
+
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layoutId"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ufabc.projeto.moduloconfigurador.CorFundoTexto">
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Escolha a cor do fundo do texto"
+        android:background="@drawable/textview_border"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:id="@+id/textView"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:textSize="32sp"
+        />
+
+    <ImageView
+        android:id="@+id/imageColor"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/cor"/>
+
+
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/vermelho1button"
+            android:layout_gravity="center_vertical"
+            android:background="#ff0000" />
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/amarelo1button"
+            android:layout_gravity="center_vertical"
+            android:background="#ffff00" />
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/ciano1button"
+            android:layout_gravity="center_vertical"
+            android:background="#12ffc0" />
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/buttonbranco1"
+            android:layout_gravity="center_vertical"
+            android:background="#ffffff" />
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/buttonpreto1"
+            android:layout_gravity="center_vertical"
+            android:background="#000000" />
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/buttonazul1"
+            android:layout_gravity="center_vertical"
+            android:background="#008df2" />
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/buttonverde1"
+            android:layout_gravity="center_vertical"
+            android:background="#37ff00" />
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/buttonroxo1"
+            android:layout_gravity="center_vertical"
+            android:background="#a566e8" />
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/buttonrosa1"
+            android:layout_gravity="center_vertical"
+            android:background="#f52fd7" />
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+    </LinearLayout>
+
+-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Escolha a cor do texto"
+        android:background="@drawable/textview_border"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:id="@+id/textView1"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:textSize="32sp" />
+
+    <ImageView
+        android:id="@+id/imageColor2"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/cor"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+
+        android:id="@+id/botaoId"
+        style="@android:style/Widget.Button.Inset"
+        android:contentDescription="Botão para salvar as configurações"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+        android:layout_gravity="right" />
+
+
+</LinearLayout>
+
+</ScrollView>

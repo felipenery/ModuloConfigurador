@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ufabc.projeto.moduloconfigurador">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    //colocquei android:largeHeap="true"
+    <application
+        android:name=".ConfigHelper"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".QualTipo" />
+        <activity android:name=".ReconhecimentoToque" />
+        <activity android:name=".AtivarLeitorTela" />
+        <activity android:name=".AtivarZoom" />
+        <activity android:name=".SeguirFoco" />
+        <activity android:name=".AtivarDigitacaoInteligente" />
+        <activity android:name=".MostrarControleZoom" />
+        <activity android:name=".VisibilidadeControleOcioso" />
+        <activity android:name=".DefinirTelaZoom" />
+        <activity android:name=".FiltroTelaZoom" />
+        <activity android:name=".NivelMaximoZoom" />
+        <activity android:name=".AtivarLupa" />
+        <activity android:name=".TextoAtivarLupa" />
+        <activity android:name=".AtivarBrilhoAutomaticoLupa" />
+        <activity android:name=".AlterarContraste" />
+        <activity android:name=".TemaAltoContraste" />
+        <activity android:name=".ReduzirTransparencia" />
+        <activity android:name=".EscurecerCores" />
+        <activity android:name=".TecladoAltoContraste" />
+        <activity android:name=".InverterCores" />
+        <activity android:name=".AtivarBrilhoAutomatico" />
+        <activity android:name=".PontoBranco" />
+        <activity android:name=".AjustarPorcentagem" />
+        <activity android:name=".TextoNegrito" />
+        <activity android:name=".ConfTamanhoFonteTexto" />
+        <activity android:name=".ExemploFonte" />
+        <activity android:name=".AutoDescricaoMidia" />
+        <activity android:name=".FalarSelecao" />
+        <activity android:name=".FalarConteudoTela" />
+        <activity android:name=".VelocidadeFala" />
+        <activity android:name=".EscolherVoz" />
+        <activity android:name=".AlterarTomVoz" />
+        <activity android:name=".FalarPontuacao" />
+        <activity android:name=".FalarTextoSelecionado" />
+        <activity android:name=".LetrasMaiusculas" />
+        <activity android:name=".ApagarTexto" />
+        <activity android:name=".LinksIncorporados" />
+        <activity android:name=".LerCabecalhoTabelas" />
+        <activity android:name=".LerNumeLinhaColuna" />
+        <activity android:name=".FalarEmogi" />
+        <activity android:name=".LegendaGeradaMidia" />
+        <activity android:name=".EstiloDigitacao" />
+        <activity android:name=".RetornoFonetico" />
+        <activity android:name=".FalarDigitacao" />
+        <activity android:name=".SempreFalarDigitacao" />
+        <activity android:name=".CursorGrande" />
+        <activity android:name=".TempoDoisToques" />
+        <activity android:name=".NavegarImagens" />
+        <activity android:name=".CorFundoTexto" />
+        <activity android:name=".EscolherVoz2" />
+        <activity android:name=".VelocidadeFala2" />
+        <activity android:name=".DestacarConteudo" />
+        <activity android:name=".Destacar" />
+        <activity android:name=".EstiloDestaque" />
+        <activity android:name=".CorDestaque" />
+        <activity android:name=".FalarDigitacao2" />
+        <activity android:name=".FalarCaracteres" />
+        <activity android:name=".DicasCaracteres" />
+        <activity android:name=".RetornoCaractere" />
+        <activity android:name=".FalarPalavrasInteiras" />
+        <activity android:name=".FalarCorrecao" />
+        <activity android:name=".FalarMaiusculas" />
+        <activity android:name=".PressionarPrevisao" />
+        <activity android:name=".ReduzirMovimento" />
+        <activity android:name=".EfeitoMensagem" />
+        <activity android:name=".AtivarFlashAlertas" />
+        <activity android:name=".PiscarFlashSilenciar" />
+        <activity android:name=".SilenciarTodosEfeitos" />
+        <activity android:name=".AtivarMono" />
+        <activity android:name=".BalanceamentoSom" />
+        <activity android:name=".CancelamentoRuido" />
+        <activity android:name=".CompAparelhoAuditivo" />
+        <activity android:name=".DisponivelLegendaSurdo" />
+        <activity android:name=".TipoLegenda" />
+        <activity android:name=".EscolherFonte" />
+        <activity android:name=".FonteVideo" />
+        <activity android:name=".TamanhoFonte" />
+        <activity android:name=".TamanhoEspecificadoVideo" />
+        <activity android:name=".EscolherCorTexto" />
+        <activity android:name=".CorVideo" />
+        <activity android:name=".EscolherCorFundo" />
+        <activity android:name=".CorFundoVideo" />
+        <activity android:name=".OpacidadeFundo" />
+        <activity android:name=".OpacidadeVideo" />
+        <activity android:name=".OpacidadeTexto" />
+        <activity android:name=".OpacidadeTextoVideo" />
+        <activity android:name=".RepeticaoToque" />
+        <activity android:name=".ToqueAssistido" />
+        <activity android:name=".CorTela" />
+        <activity android:name=".IntensidadeTela" />
+        <activity android:name=".IntencidadeMatrizTela" />
+        <activity android:name=".AtivarAssitentePessoal" />
+        <activity android:name=".DigitarAssitentePessoal" />
+        <activity android:name=".ConfigurarRetornoVoz" />
+        <activity android:name=".TextoSempreAtivo" />
+        <activity android:name=".TextoSeletor" />
+        <activity android:name=".TextoHandsfree" />
+        <activity android:name=".AgitarDesfazer" />
+        <activity android:name=".DesativarVibracao" />
+        <activity android:name=".AtenderAutomaticamente" />
+        <activity android:name=".AudioLigacao" />
+        <activity android:name=".AtalhoAcessibilidade" />
+        <activity android:name=".TextoInstrucoes" />
+        <activity android:name=".VisualizacoesTela" />
+        <activity android:name=".ConfigureSmartfone" />
+        <activity android:name=".FuncionalidadeConfiguracao" />
+        <activity android:name=".OqueConfigurar" />
+
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".VideoPiscarFlashSilenciar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="YoursActivityName" />
+        <activity android:name=".ConfigAll"></activity>
+    </application>
+
+</manifest>

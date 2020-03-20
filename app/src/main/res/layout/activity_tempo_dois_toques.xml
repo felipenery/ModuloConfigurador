@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ufabc.projeto.moduloconfigurador.TempoDoisToques">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tempo para dois toques"
+        android:background="@drawable/textview_border"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:id="@+id/textView1"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:textSize="35sp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Dois toques que ocorram no tempo limite resultarão em um toque duplo no leitor de tela."
+        android:id="@+id/textView2"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="top|center_horizontal"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="27dp" />
+
+
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            style="@android:style/Widget.Button.Inset"
+            android:contentDescription="Botão - para diminuir os segundos"
+            android:id="@+id/button2"
+            android:textSize="36dp"
+            android:gravity="center"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:id="@+id/button3"
+            style="@android:style/Widget.Button.Inset"
+            android:contentDescription="Botão + para aumentar os segundos"
+            android:layout_gravity="right"
+            android:textStyle="normal"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:gravity="center" />
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Padrão"
+        android:id="@+id/padraoId"
+        style="@android:style/Widget.Button.Inset"
+        android:contentDescription="Botão para deixar opção padrão"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="normal"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number|numberDecimal"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:layout_gravity="center_horizontal"
+            android:text="0,10"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Segundos"
+            android:id="@+id/textView"
+            android:textStyle="bold"
+            android:textSize="18dp" />
+
+
+
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/botaoIconeId"
+            android:contentDescription="Botão para passar pra proxima tela"
+            android:background="@drawable/ic_action_goright"
+            android:layout_gravity="right"
+            android:foregroundGravity="right" />
+
+
+
+</LinearLayout>
+</ScrollView>

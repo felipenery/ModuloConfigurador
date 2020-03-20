@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ufabc.projeto.moduloconfigurador.RepeticaoToque"
+    android:gravity="center_vertical">
+
+
+    <TextView
+        android:layout_width="302dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Ignorar repetição "
+        android:background="@drawable/textview_border"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:id="@+id/textView1"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:textSize="40sp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="A duração na qual vários toques serão tratados como um só toque "
+        android:id="@+id/textView2"
+        android:layout_gravity="top|center_horizontal"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="27dp"
+        android:layout_marginTop="10dp" />
+
+
+
+
+
+
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginTop="10dp">
+
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            style="@android:style/Widget.Button.Inset"
+            android:contentDescription="Botão sim para confirmar opção"
+            android:id="@+id/button2"
+            android:textSize="37dp"
+            android:gravity="center"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:id="@+id/button3"
+            style="@android:style/Widget.Button.Inset"
+            android:contentDescription="Botão não para pular opção"
+            android:layout_gravity="right"
+            android:textStyle="normal"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:gravity="center" />
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number|numberDecimal"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:layout_gravity="center_horizontal"
+            android:numeric="integer|decimal"
+            android:text="0,10"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Segundos"
+            android:id="@+id/textView"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+
+
+
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Padrão"
+        android:id="@+id/padraoId"
+        style="@android:style/Widget.Button.Inset"
+        android:contentDescription="Botão para deixar a configuração padrão"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="normal"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+        android:layout_marginTop="10dp" />
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageView3"
+            android:contentDescription="Botão de atalho para libras"
+            android:background="@drawable/iconelibras"
+            android:layout_gravity="left"/>
+
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/botaoIconeId"
+            android:contentDescription="Botão de atalho para libras"
+            android:background="@drawable/ic_action_goright"
+            android:layout_gravity="right"
+            android:foregroundGravity="right" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</LinearLayout>

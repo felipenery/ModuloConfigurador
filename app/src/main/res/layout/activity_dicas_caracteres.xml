@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ufabc.projeto.moduloconfigurador.DicasCaracteres"
+    android:gravity="center_vertical">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Falar dicas de caracteres?"
+        android:background="@drawable/textview_border"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:id="@+id/textView2"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:textSize="39sp" />
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="25dp">
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sim"
+            style="@android:style/Widget.Button.Inset"
+            android:id="@+id/simId"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Não"
+            style="@android:style/Widget.Button.Inset"
+            android:id="@+id/naoId"
+            android:textStyle="bold"
+            android:textSize="30dp" />
+        <Space
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</LinearLayout>
