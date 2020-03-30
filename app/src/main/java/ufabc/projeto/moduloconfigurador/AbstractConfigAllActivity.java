@@ -74,14 +74,8 @@ public abstract class AbstractConfigAllActivity extends AppCompatActivity implem
         if (sharedPreferences.getInt(KEY_COR_TEXTO, corText) != 0){
             corText = sharedPreferences.getInt(KEY_COR_TEXTO, corText);
         } if (sharedPreferences.getInt(KEY_COR_TEXTO, corText) == 0 ) {
-
-
-
             sharedPreferences.edit().putInt(KEY_COR_TEXTO, -15920896).commit();
-
-
             corText = sharedPreferences.getInt(KEY_COR_TEXTO, corText);
-
         }
         return corText;
     }
@@ -113,10 +107,7 @@ public abstract class AbstractConfigAllActivity extends AppCompatActivity implem
 
         }if(sharedPreferences.getString(KEY_FONTE , fonte) == null){
             sharedPreferences.edit().putString(KEY_FONTE, "arial.ttf").commit();
-
-
             fonte = sharedPreferences.getString(KEY_FONTE, fonte);
-
         }
         return fonte;
     }
@@ -126,10 +117,7 @@ public abstract class AbstractConfigAllActivity extends AppCompatActivity implem
            // calligrapher = new Calligrapher(this);
         }if(sharedPreferences.getString(KEY_NEGRITO, fonte) == null){
             sharedPreferences.edit().putString(KEY_NEGRITO, "arial.ttf").commit();
-
-
             fonte = sharedPreferences.getString(KEY_NEGRITO, fonte);
-
         }
         return fonte;
     }
