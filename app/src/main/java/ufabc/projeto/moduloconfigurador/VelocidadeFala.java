@@ -1,32 +1,19 @@
 package ufabc.projeto.moduloconfigurador;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Vibrator;
-import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.Voice;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
-
-import java.util.HashSet;
 import java.util.Locale;
-import java.util.Set;
 
-public class VelocidadeFala extends ConfigAll implements TextToSpeech.OnInitListener {
+public class VelocidadeFala extends AbstractConfigAllActivity implements TextToSpeech.OnInitListener {
 
     private TextToSpeech mTTS;
     private TextView textView;

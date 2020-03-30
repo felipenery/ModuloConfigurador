@@ -1,14 +1,9 @@
 package ufabc.projeto.moduloconfigurador;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Vibrator;
-import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
-import android.support.annotation.StyleRes;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -19,7 +14,7 @@ import java.util.Locale;
 import me.anwarshahriar.calligrapher.Calligrapher;
 
 
-public class ConfTamanhoFonteTexto extends ConfigAll implements TextToSpeech.OnInitListener {
+public class ConfTamanhoFonteTexto extends AbstractConfigAllActivity implements TextToSpeech.OnInitListener {
 
 
     //elementos da view

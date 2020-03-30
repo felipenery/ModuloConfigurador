@@ -1,30 +1,18 @@
 package ufabc.projeto.moduloconfigurador;
 
-import android.content.ContentResolver;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Paint;
-import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.content.Context;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
 
-import me.anwarshahriar.calligrapher.Calligrapher;
-
-public class AtivarBrilhoAutomatico extends ConfigAll implements TextToSpeech.OnInitListener {
+public class AtivarBrilhoAutomatico extends AbstractConfigAllActivity implements TextToSpeech.OnInitListener {
 
 
 
@@ -53,45 +41,20 @@ public class AtivarBrilhoAutomatico extends ConfigAll implements TextToSpeech.On
 
         //cor texto e fundo
         //TELA
-        if (sharedPreferences.getInt(KEY_COR_TELA, corTela) != 0) {
-            corTela = sharedPreferences.getInt(KEY_COR_TELA, corTela);
-            //  corTela = ((ConfigHelper) this.getApplication()).getCorFundo();
-            linearLayout.setBackgroundColor(corTela);
-        }
+        linearLayout.setBackgroundColor(corTela());
         //NEGRITO
-        if(sharedPreferences.getString(KEY_NEGRITO, fonte) != null){
-            fonte = sharedPreferences.getString(KEY_NEGRITO, fonte);
-            Calligrapher calligrapher = new Calligrapher(this);
-            calligrapher.setFont(this, fonte, true);
-        }
+        calligrapher.setFont(this, negrito(), true);
         //Cor Fonte
-        // if (((ConfigHelper) this.getApplication()).getCorTexto() != 0){
-        if (sharedPreferences.getInt(KEY_COR_TEXTO, corText) != 0){
-            corText = sharedPreferences.getInt(KEY_COR_TEXTO, corText);
-            frase.setTextColor(corText);
-            Tv.setTextColor(corText);
-        }
-
-
-       //if(((ConfigHelper) this.getApplication()).getFonte() != null){
-        if(sharedPreferences.getString(KEY_FONTE , fonte) != null){
-            fonte = sharedPreferences.getString(KEY_FONTE , fonte);
-          //  fonte = ((ConfigHelper) this.getApplication()).getFonte();
-            Calligrapher calligrapher = new Calligrapher(this);
-            calligrapher.setFont(this, fonte, true);
-
-        }
-
+        frase.setTextColor(corTexto());
+        Tv.setTextColor(corTexto());
+        //Fonte
+        calligrapher.setFont(this, fonte(), true);
         //som
-        ativarOLeitorTela = sharedPreferences.getInt(KEY_ATIVAR_LEITOR_TELA, ativarOLeitorTela);
-        velocidadeFala = sharedPreferences.getFloat(KEY_VELOCIDADE_FALA, velocidadeFala);
-        tomFala = sharedPreferences.getFloat(KEY_TOM_FALA, tomFala);
-        if (ativarOLeitorTela == 1) {
+        if (ativarLeitorTela() == 1) {
             textToSpeech = new TextToSpeech(this,  this);
         }
 
         simBotao.setOnClickListener(new View.OnClickListener() {
-
 
             @Override
             public void onClick(View view) {
@@ -107,9 +70,6 @@ public class AtivarBrilhoAutomatico extends ConfigAll implements TextToSpeech.On
             }
 
         });
-
-
-
         naoBotao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -125,8 +85,10 @@ public class AtivarBrilhoAutomatico extends ConfigAll implements TextToSpeech.On
         String falar = "Ativar o brilho automático ?"+ "\n Ajusta o brilho e o contraste da tela com base nos ajustes da luz ambiente" + "\n Botão sim" + "\n Botão não";
         if (status != TextToSpeech.ERROR) {
             textToSpeech.setLanguage(Locale.getDefault());
-            textToSpeech.setSpeechRate(velocidadeFala);
-            textToSpeech.setPitch(tomFala);
+            //usar a velocidade de fala
+            textToSpeech.setSpeechRate(velocidadeFala());
+            //usar o tom de fala
+            textToSpeech.setPitch(tomFala());
             textToSpeech.speak(falar, TextToSpeech.QUEUE_FLUSH, null, null);
         }
 

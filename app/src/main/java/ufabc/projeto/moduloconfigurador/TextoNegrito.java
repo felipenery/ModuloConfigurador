@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -12,7 +11,7 @@ import android.widget.TextView;
 import java.util.Locale;
 import me.anwarshahriar.calligrapher.Calligrapher;
 
-public class TextoNegrito extends ConfigAll implements TextToSpeech.OnInitListener {
+public class TextoNegrito extends AbstractConfigAllActivity implements TextToSpeech.OnInitListener {
 
     //elementos da view
     private Button simBotao;
@@ -32,24 +31,14 @@ public class TextoNegrito extends ConfigAll implements TextToSpeech.OnInitListen
         testeBotao = (Button) findViewById(R.id.testeId);
         linearLayout = (LinearLayout) findViewById(R.id.layoutId);
 
+
+
         //cor texto e fundo
 
-        TESTE();
-        if(sharedPreferences.getInt(KEY_COR_TELA, corTela) != 0) {
-            corTela = sharedPreferences.getInt(KEY_COR_TELA, corTela);
-            linearLayout.setBackgroundColor(corTela);
-        }
-        if (sharedPreferences.getInt(KEY_COR_TEXTO, corText) != 0){
-        corText = sharedPreferences.getInt(KEY_COR_TEXTO, corText);
-        Tv.setTextColor(corText);
-        }
-
-
+        linearLayout.setBackgroundColor(corTela()); // Mudando a cor da tela
+        Tv.setTextColor(corTexto()); // Mudando a cor do texto
         //som
-        ativarOLeitorTela = sharedPreferences.getInt(KEY_ATIVAR_LEITOR_TELA, ativarOLeitorTela);
-        velocidadeFala = sharedPreferences.getFloat(KEY_VELOCIDADE_FALA, velocidadeFala);
-        tomFala = sharedPreferences.getFloat(KEY_TOM_FALA, tomFala);
-        if (ativarOLeitorTela == 1) {
+        if (ativarLeitorTela() == 1) {
             textToSpeech = new TextToSpeech(this,  this);
         }
 
@@ -62,7 +51,7 @@ public class TextoNegrito extends ConfigAll implements TextToSpeech.OnInitListen
 
                 Calligrapher calligrapher = new Calligrapher(TextoNegrito.this);
                 calligrapher.setFont(TextoNegrito.this, "futura-extra-bold-italic.ttf", true);
-                Log.i("@testeNegrito", "NegritoTexto - "+calligrapher);
+
                 fonte = "futura-extra-bold-italic.ttf";
                 click(fonte);
 
@@ -101,11 +90,14 @@ public class TextoNegrito extends ConfigAll implements TextToSpeech.OnInitListen
     }
     @Override
     public void onInit(int status) { //FALANDO assim que abre a atividade
+
         String falar = "Deseja colocar o texto em negrito"+ "\n Botão de teste" + "\n Botão sim" + "\n Botão não";
         if (status != TextToSpeech.ERROR) {
             textToSpeech.setLanguage(Locale.getDefault());
-            textToSpeech.setSpeechRate(velocidadeFala);
-            textToSpeech.setPitch(tomFala);
+            //usar a velocidade de fala
+            textToSpeech.setSpeechRate(velocidadeFala());
+            //usar o tom de fala
+            textToSpeech.setPitch(tomFala());
             textToSpeech.speak(falar, TextToSpeech.QUEUE_FLUSH, null, null);
         }
 

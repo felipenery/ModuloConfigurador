@@ -1,22 +1,18 @@
 package ufabc.projeto.moduloconfigurador;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Vibrator;
-import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import java.util.Locale;
 
-public class AlterarTomVoz extends ConfigAll implements TextToSpeech.OnInitListener {
+public class AlterarTomVoz extends AbstractConfigAllActivity implements TextToSpeech.OnInitListener {
 
     private TextView textView;
 

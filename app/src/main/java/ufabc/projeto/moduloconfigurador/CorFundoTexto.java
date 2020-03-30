@@ -1,14 +1,10 @@
 package ufabc.projeto.moduloconfigurador;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Vibrator;
-import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -23,10 +19,7 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-import me.anwarshahriar.calligrapher.Calligrapher;
-import yuku.ambilwarna.AmbilWarnaDialog;
-
-public class CorFundoTexto extends ConfigAll implements TextToSpeech.OnInitListener {
+public class CorFundoTexto extends AbstractConfigAllActivity implements TextToSpeech.OnInitListener {
 
     private Button salvarBotao;
     public LinearLayout l;
@@ -86,7 +79,7 @@ public class CorFundoTexto extends ConfigAll implements TextToSpeech.OnInitListe
                  String hex = "#"+ Integer.toHexString(pixelFundo);
 
                  s.setBackgroundColor(pixelFundo);
-                 salvarBotao.setBackgroundColor(pixelFundo);
+                 //salvarBotao.setBackgroundColor(pixelFundo);
                  clickFundo(pixelFundo);
 
 
@@ -113,21 +106,32 @@ public class CorFundoTexto extends ConfigAll implements TextToSpeech.OnInitListe
                     text.setTextColor(Color.rgb(r,g,b));
                     text1.setTextColor(Color.rgb(r,g,b));
 
-                    salvarBotao.setTextColor(Color.rgb(r,g,b));
+                    //salvarBotao.setTextColor(pixelText);
 
 
-                    clickTexto(Color.rgb(r,g,b));
+
+                        clickTexto(pixelText);
+
+
+
+
 
                 }
+
+
+
                 return false;
             }
         });
-
+/*
+        if (pixelText == 0 && sharedPreferences.getInt(KEY_COR_TEXTO, corText) == 0 ) {
+            pixelText = -16187385;
+            clickTexto(pixelText);
+        }
+        */
+        Log.i("@pixelText","cor - "+ pixelText);
         //som
-        ativarOLeitorTela = sharedPreferences.getInt(KEY_ATIVAR_LEITOR_TELA, ativarOLeitorTela);
-        velocidadeFala = sharedPreferences.getFloat(KEY_VELOCIDADE_FALA, velocidadeFala);
-        tomFala = sharedPreferences.getFloat(KEY_TOM_FALA, tomFala);
-        if (ativarOLeitorTela == 1) {
+        if (ativarLeitorTela() == 1) {
             textToSpeech = new TextToSpeech(this,  this);
         }
 
@@ -150,9 +154,9 @@ public class CorFundoTexto extends ConfigAll implements TextToSpeech.OnInitListe
         sharedPreferences.edit().putInt(KEY_COR_TELA, corTela).commit();
 
     }
-    public void clickTexto(int corTexto){
+    public void clickTexto(int corText){
         //Para armazenar um valor
-        sharedPreferences.edit().putInt(KEY_COR_TEXTO, corTexto).commit();
+            sharedPreferences.edit().putInt(KEY_COR_TEXTO, corText).commit();
 
     }
 
@@ -161,8 +165,10 @@ public class CorFundoTexto extends ConfigAll implements TextToSpeech.OnInitListe
         String falar = "Escolha a cor do fundo em texto"+ "\n Em seguida"+" Escolha a cor do texto." + "\n Botão salvar" ;
         if (status != TextToSpeech.ERROR) {
             textToSpeech.setLanguage(Locale.getDefault());
-            textToSpeech.setSpeechRate(velocidadeFala);
-            textToSpeech.setPitch(tomFala);
+            //usar a velocidade de fala
+            textToSpeech.setSpeechRate(velocidadeFala());
+            //usar o tom de fala
+            textToSpeech.setPitch(tomFala());
             textToSpeech.speak(falar, TextToSpeech.QUEUE_FLUSH, null, null);
         }
 

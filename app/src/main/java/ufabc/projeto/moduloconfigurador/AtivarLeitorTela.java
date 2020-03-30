@@ -1,60 +1,16 @@
 package ufabc.projeto.moduloconfigurador;
 
-import android.Manifest;
-import android.accessibilityservice.AccessibilityService;
-import android.accessibilityservice.AccessibilityServiceInfo;
-import android.app.ActivityManager;
-import android.app.Instrumentation;
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.app.UiAutomation;
-import android.content.BroadcastReceiver;
-import android.content.ComponentName;
-import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ServiceInfo;
-import android.graphics.Color;
-import android.media.AudioManager;
-import android.media.RingtoneManager;
-import android.os.Build;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceManager;
-import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
-import android.speech.tts.Voice;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
-import android.view.accessibility.AccessibilityManager;
-import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.security.cert.Extension;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Locale;
-import java.util.Set;
-import java.util.UUID;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
-public class AtivarLeitorTela extends ConfigAll  {
+public class AtivarLeitorTela extends AbstractConfigAllActivity {
 
     private Button simBotao;
     private Button naoBotao;

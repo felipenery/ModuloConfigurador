@@ -4,41 +4,27 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Vibrator;
-import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.SeekBar;
-import android.widget.TextView;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 
 
 import android.view.View.OnClickListener;
-import android.widget.Toast;
 
 import java.util.Locale;
 
 import me.anwarshahriar.calligrapher.Calligrapher;
 
 
-public class ExemploFonte extends ConfigAll implements TextToSpeech.OnInitListener{
+public class ExemploFonte extends AbstractConfigAllActivity implements TextToSpeech.OnInitListener{
 
 
 
