@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -15,11 +16,11 @@ import java.util.Locale;
 public class AlterarTomVoz extends AbstractConfigAllActivity implements TextToSpeech.OnInitListener {
 
     private TextView textView;
-
+    private ScrollView s;
     private TextToSpeech mTTS;
     private SeekBar seekBar;
-    private ImageView iconeBotao;
-    private ImageView iconeSom;
+    private ImageView iconeBotao, iconeSom;
+
 
     private final String REQUEST_ID = ""; //Ohar pq foi alterado
 
@@ -32,12 +33,24 @@ public class AlterarTomVoz extends AbstractConfigAllActivity implements TextToSp
 
         iconeSom = (ImageView) findViewById(R.id.icone_som);
         iconeBotao = (ImageView) findViewById(R.id.botaoIconeId);
-        textView = (TextView) findViewById(R.id.textView);
-
+        textView = (TextView) findViewById(R.id.textView4);
+        Tv = (TextView) findViewById(R.id.textView2);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
+        s = (ScrollView) findViewById(R.id.layoutId);
 
 
-        velocidadeFala = sharedPreferences.getFloat(KEY_VELOCIDADE_FALA, velocidadeFala);
+
+
+        //cor texto e fundo
+        //TELA
+        s.setBackgroundColor(corTela());
+        //NEGRITO
+        calligrapher.setFont(this, negrito(), true);
+        //Cor Fonte
+        Tv.setTextColor(corTexto());
+        textView.setTextColor(corTexto());
+        //Fonte
+        calligrapher.setFont(this, fonte(), true);
 
 
         mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
@@ -59,9 +72,9 @@ public class AlterarTomVoz extends AbstractConfigAllActivity implements TextToSp
         });
 
 
-        ativarOLeitorTela = sharedPreferences.getInt(KEY_ATIVAR_LEITOR_TELA, ativarOLeitorTela);
+
         //Executar a voz assim que entra na pagina
-        if (ativarOLeitorTela == 1) {
+        if (ativarLeitorTela() == 1) {
             textToSpeech = new TextToSpeech(this,  this);
         }
 
@@ -92,7 +105,7 @@ public class AlterarTomVoz extends AbstractConfigAllActivity implements TextToSp
         String falar = "Alterar o tom"+ "\nDeixa a voz do leitor de tela mais grave ou mais aguda." + "\n Barra de rolagem para definir o Tom " + "\n Botão para testar o tom" + "\n Botão para passar e ir para proxima tela" ;
         if (status != TextToSpeech.ERROR) {
             textToSpeech.setLanguage(Locale.getDefault());
-            textToSpeech.setSpeechRate(velocidadeFala);
+            textToSpeech.setSpeechRate(velocidadeFala());
             textToSpeech.speak(falar, TextToSpeech.QUEUE_FLUSH, null, null);
         }
     }
@@ -100,9 +113,7 @@ public class AlterarTomVoz extends AbstractConfigAllActivity implements TextToSp
         String text = "Alterar oo Toomm";
         float pitch = (float) seekBar.getProgress() /50;
         if (pitch < 0.1) pitch = 0.1f;
-        //((ConfigHelper) this.getApplication()).setTomFala(pitch);// passar os dados referentes ao tom da fala
 
-        //Para armazenar um valor String.valueOf
         sharedPreferences.edit().putFloat(KEY_TOM_FALA, pitch).commit();
         mTTS.setPitch(pitch);
         mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null, REQUEST_ID);

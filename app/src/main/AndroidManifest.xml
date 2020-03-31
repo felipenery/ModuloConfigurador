@@ -161,7 +161,8 @@
             android:name=".VideoPiscarFlashSilenciar"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="YoursActivityName" />
-        <activity android:name=".AbstractConfigAllActivity"></activity>
+        <activity android:name=".AbstractConfigAllActivity" />
+        <activity android:name=".TextoAtivarLeitorTela"></activity>
     </application>
 
 </manifest>

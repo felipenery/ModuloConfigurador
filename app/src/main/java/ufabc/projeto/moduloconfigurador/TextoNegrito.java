@@ -17,8 +17,7 @@ public class TextoNegrito extends AbstractConfigAllActivity implements TextToSpe
     private Button simBotao;
     private Button naoBotao;
     private Button testeBotao;
-    private LinearLayout linearLayout;
-    private TextView Tv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +33,12 @@ public class TextoNegrito extends AbstractConfigAllActivity implements TextToSpe
 
 
         //cor texto e fundo
-
         linearLayout.setBackgroundColor(corTela()); // Mudando a cor da tela
         Tv.setTextColor(corTexto()); // Mudando a cor do texto
+        //NEGRITO
+        calligrapher.setFont(this, negrito(), true);
+        //Fonte
+        calligrapher.setFont(this, fonte(), true);
         //som
         if (ativarLeitorTela() == 1) {
             textToSpeech = new TextToSpeech(this,  this);

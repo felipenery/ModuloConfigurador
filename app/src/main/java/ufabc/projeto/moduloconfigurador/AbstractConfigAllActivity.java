@@ -36,6 +36,7 @@ public abstract class AbstractConfigAllActivity extends AppCompatActivity implem
 
 
     protected LinearLayout linearLayout;
+    protected TextView Tv;
 
     //Valores das configurações
     protected static final String KEY_COR_TELA = "cor_tela";

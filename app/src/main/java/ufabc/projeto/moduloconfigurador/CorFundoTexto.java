@@ -22,10 +22,8 @@ import java.util.Locale;
 public class CorFundoTexto extends AbstractConfigAllActivity implements TextToSpeech.OnInitListener {
 
     private Button salvarBotao;
-    public LinearLayout l;
     public ScrollView s;
-    public TextView text;
-    public TextView text1;
+    public TextView text, text1;
     //fundo
     public ImageView mImageView;
     public Bitmap bitmap;
@@ -34,7 +32,7 @@ public class CorFundoTexto extends AbstractConfigAllActivity implements TextToSp
     public ImageView mImageViewText;
     public Bitmap bitmapText;
     private int pixelText;
-    public ScrollView testeCor;
+
 
 
 
@@ -46,10 +44,8 @@ public class CorFundoTexto extends AbstractConfigAllActivity implements TextToSp
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cor_fundo_texto);
-        l = (LinearLayout) findViewById(R.id.layoutId);
         s = (ScrollView) findViewById(R.id.scrollId);
         salvarBotao = (Button) findViewById(R.id.botaoId);
-
         text = (TextView) findViewById(R.id.textView);
         text1 = (TextView) findViewById(R.id.textView1);
 
@@ -62,6 +58,17 @@ public class CorFundoTexto extends AbstractConfigAllActivity implements TextToSp
         mImageView.buildDrawingCache(true);
         mImageViewText.setDrawingCacheEnabled(true);
         mImageViewText.buildDrawingCache(true);
+
+        //cor texto e fundo
+        //TELA
+        s.setBackgroundColor(corTela());
+        //NEGRITO
+        calligrapher.setFont(this, negrito(), true);
+        //Cor Fonte
+        text.setTextColor(corTexto());
+        text1.setTextColor(corTexto());
+        //Fonte
+        calligrapher.setFont(this, fonte(), true);
 
         //fundo
         mImageView.setOnTouchListener(new View.OnTouchListener() {
@@ -123,12 +130,7 @@ public class CorFundoTexto extends AbstractConfigAllActivity implements TextToSp
                 return false;
             }
         });
-/*
-        if (pixelText == 0 && sharedPreferences.getInt(KEY_COR_TEXTO, corText) == 0 ) {
-            pixelText = -16187385;
-            clickTexto(pixelText);
-        }
-        */
+
         Log.i("@pixelText","cor - "+ pixelText);
         //som
         if (ativarLeitorTela() == 1) {

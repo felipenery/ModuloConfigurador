@@ -7,15 +7,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.Locale;
 
 public class AtivarLeitorTela extends AbstractConfigAllActivity {
 
-    private Button simBotao;
-    private Button naoBotao;
-    private Button mostrarBotao;
+    private Button simBotao, naoBotao, mostrarBotao;
     private ImageView iconeBotao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +27,19 @@ public class AtivarLeitorTela extends AbstractConfigAllActivity {
         naoBotao = (Button) findViewById(R.id.naoId);
         mostrarBotao = (Button) findViewById(R.id.mostrarId);
         iconeBotao = (ImageView) findViewById(R.id.botaoIconeId);
+        linearLayout = (LinearLayout) findViewById(R.id.layoutId);
+        Tv = (TextView) findViewById(R.id.textView5);
 
 
-
+        //cor texto e fundo
+        //TELA
+        linearLayout.setBackgroundColor(corTela());
+        //NEGRITO
+        calligrapher.setFont(this, negrito(), true);
+        //Cor Fonte
+        Tv.setTextColor(corTexto());
+        //Fonte
+        calligrapher.setFont(this, fonte(), true);
 
         textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -93,7 +104,7 @@ public class AtivarLeitorTela extends AbstractConfigAllActivity {
         iconeBotao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.texto_info_leitor_tela);
+                startActivity(new Intent(AtivarLeitorTela.this,TextoAtivarLeitorTela.class));
             }
         });
 

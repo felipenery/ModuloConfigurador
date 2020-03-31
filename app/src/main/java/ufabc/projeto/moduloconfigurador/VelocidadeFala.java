@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -16,18 +17,11 @@ import java.util.Locale;
 public class VelocidadeFala extends AbstractConfigAllActivity implements TextToSpeech.OnInitListener {
 
     private TextToSpeech mTTS;
-    private TextView textView;
+
     private SeekBar seekBar;
-    private ImageView iconeBotao;
-    private ImageView iconeSom;
+    private ImageView iconeBotao, iconeSom;
 
 
-
-
-
-
-
-    //private static final String KEY_VELOCIDADE_FALA = "velocidade_fala";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +30,20 @@ public class VelocidadeFala extends AbstractConfigAllActivity implements TextToS
 
         iconeBotao = (ImageView) findViewById(R.id.botaoIconeId);
         iconeSom = (ImageView) findViewById(R.id.icone_som);
-        textView = (TextView) findViewById(R.id.textView);
-
+        linearLayout = (LinearLayout) findViewById(R.id.layoutId);
+        Tv = (TextView) findViewById(R.id.textView5);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
 
 
-
-
+        //cor texto e fundo
+        //TELA
+        linearLayout.setBackgroundColor(corTela());
+        //NEGRITO
+        calligrapher.setFont(this, negrito(), true);
+        //Cor Fonte
+        Tv.setTextColor(corTexto());
+        //Fonte
+        calligrapher.setFont(this, fonte(), true);
 
         mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -74,7 +75,7 @@ public class VelocidadeFala extends AbstractConfigAllActivity implements TextToS
 
 
 
-       // ativarOLeitorTela = ((ConfigHelper) this.getApplication()).getAtivarOLeitorTela();
+
         ativarOLeitorTela = sharedPreferences.getInt(KEY_ATIVAR_LEITOR_TELA, ativarOLeitorTela);
         //Executar a voz assim que entra na pagina
         if (ativarOLeitorTela == 1) {
@@ -87,7 +88,6 @@ public class VelocidadeFala extends AbstractConfigAllActivity implements TextToS
                 Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
                 long milliseconds = 350;
                 vibrator.vibrate(milliseconds);
-
                 //startActivity(new Intent(VelocidadeFala.this, EscolherVoz.class));
                 startActivity(new Intent(VelocidadeFala.this, AlterarTomVoz.class));
             }

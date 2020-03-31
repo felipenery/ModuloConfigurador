@@ -20,8 +20,7 @@ public class ConfTamanhoFonteTexto extends AbstractConfigAllActivity implements 
     //elementos da view
     private Button simBotao;
     private Button naoBotao;
-    private LinearLayout linearLayout;
-    private TextView Tv;
+
 
 
 
@@ -34,36 +33,16 @@ public class ConfTamanhoFonteTexto extends AbstractConfigAllActivity implements 
         simBotao = (Button) findViewById(R.id.simId);
         naoBotao = (Button) findViewById(R.id.naoId);
 
-
-
-
-        //corTela = ((ConfigHelper) this.getApplication()).getCorFundo();
         //cor texto e fundo
-        if (sharedPreferences.getInt(KEY_COR_TELA, corTela) != 0) {
-            corTela = sharedPreferences.getInt(KEY_COR_TELA, corTela);
-            linearLayout.setBackgroundColor(corTela);
-        }
-        if (sharedPreferences.getInt(KEY_COR_TEXTO, corText) != 0) {
-            //corText = ((ConfigHelper) this.getApplication()).getCorTexto();
-            corText = sharedPreferences.getInt(KEY_COR_TEXTO, corText);
-            Tv.setTextColor(corText);
-
-        }
-          if(sharedPreferences.getString(KEY_NEGRITO, fonte) != null){
-            fonte = sharedPreferences.getString(KEY_NEGRITO, fonte);
-            Calligrapher calligrapher = new Calligrapher(this);
-            calligrapher.setFont(this, fonte, true);
-        }
-
-
-
-
-
+        linearLayout.setBackgroundColor(corTela()); // Mudando a cor da tela
+        //NEGRITO
+        calligrapher.setFont(this, negrito(), true);
+        //Cor Fonte
+        Tv.setTextColor(corTexto());
         //som
-        ativarOLeitorTela = sharedPreferences.getInt(KEY_ATIVAR_LEITOR_TELA, ativarOLeitorTela);
-        velocidadeFala = sharedPreferences.getFloat(KEY_VELOCIDADE_FALA, velocidadeFala);
-        tomFala = sharedPreferences.getFloat(KEY_TOM_FALA, tomFala);
-        if (ativarOLeitorTela == 1) {
+
+
+        if (ativarLeitorTela() == 1) {
             textToSpeech = new TextToSpeech(this,  this);
         }
 
@@ -97,8 +76,8 @@ public class ConfTamanhoFonteTexto extends AbstractConfigAllActivity implements 
             String falar = "Configurar tamanho e fonte dos textos?" + "\n Botão sim" + "\n Botão não";
             if (status != TextToSpeech.ERROR) {
                 textToSpeech.setLanguage(Locale.getDefault());
-                textToSpeech.setSpeechRate(velocidadeFala);
-                textToSpeech.setPitch(tomFala);
+                textToSpeech.setSpeechRate(velocidadeFala());
+                textToSpeech.setPitch(tomFala());
                 textToSpeech.speak(falar, TextToSpeech.QUEUE_FLUSH, null, null);
 
             }
