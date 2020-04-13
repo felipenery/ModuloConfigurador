@@ -96,6 +96,7 @@ public class AtivarLeitorTela extends AbstractConfigAllActivity {
                 click(ativarOLeitorTela);
                 //startActivity(new Intent(AtivarLeitorTela.this,AtivarZoom.class));
                 startActivity(new Intent(AtivarLeitorTela.this,CorFundoTexto.class));
+
             }
         });
 

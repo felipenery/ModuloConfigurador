@@ -63,7 +63,8 @@ public class ConfTamanhoFonteTexto extends AbstractConfigAllActivity implements 
                 long milliseconds = 350;
                 vibrator.vibrate(milliseconds);
                // startActivity(new Intent(ConfTamanhoFonteTexto.this,AutoDescricaoMidia.class)); caminho certo
-                startActivity(new Intent(ConfTamanhoFonteTexto.this,ExemploFonte.class));
+               // startActivity(new Intent(ConfTamanhoFonteTexto.this,ExemploFonte.class));
+               startActivity(new Intent(ConfTamanhoFonteTexto.this,OqueConfigurar.class));
             }
         });
 

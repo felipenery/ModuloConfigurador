@@ -162,7 +162,8 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="YoursActivityName" />
         <activity android:name=".AbstractConfigAllActivity" />
-        <activity android:name=".TextoAtivarLeitorTela"></activity>
+        <activity android:name=".TextoAtivarLeitorTela" />
+        <activity android:name=".ExampleItem"></activity>
     </application>
 
 </manifest>

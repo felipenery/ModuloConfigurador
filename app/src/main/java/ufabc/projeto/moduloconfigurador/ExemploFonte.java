@@ -249,17 +249,18 @@ public class ExemploFonte extends AbstractConfigAllActivity implements TextToSpe
 
     @Override
     public void onInit(int status) { //FALANDO assim que abre a atividade
-        int vezes =  1;
-        if(vezes ==1) {
+
+        int vezes =  0;
+        if(vezes ==0) {
             String falar = "Frase para usar como exemplo " + "\n Botão fonte Caveat " + "\n Botão fonte Courier New" + "\n Botão fonte Lobster" + "\n Botão fonte Arial" + "\n Botão para redefinir as configurações" + "\n Barra de rolagem para definir o tamanho do texto" + "\n Botão para passar para proxima tela";
             if (status != TextToSpeech.ERROR) {
                 textToSpeech.setLanguage(Locale.getDefault());
                 textToSpeech.setSpeechRate(velocidadeFala);
                 textToSpeech.setPitch(tomFala);
                 textToSpeech.speak(falar, TextToSpeech.QUEUE_FLUSH, null, null);
-            }
-            vezes = 0;
 
+            }
+            vezes =1;
         }
 
     }

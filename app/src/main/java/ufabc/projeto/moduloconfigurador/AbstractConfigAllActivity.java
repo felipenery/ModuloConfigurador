@@ -1,5 +1,6 @@
 package ufabc.projeto.moduloconfigurador;
 
+import android.content.Context;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -66,24 +67,24 @@ public abstract class AbstractConfigAllActivity extends AppCompatActivity implem
 
     public int corTela(){
         if(sharedPreferences.getInt(KEY_COR_TELA, corTela) != 0) {
-            corTela = sharedPreferences.getInt(KEY_COR_TELA, corTela);
+            corTela = sharedPreferences.getInt(KEY_COR_TELA, Context.MODE_PRIVATE);
         }
         return corTela;
     }
 
     public int corTexto(){
         if (sharedPreferences.getInt(KEY_COR_TEXTO, corText) != 0){
-            corText = sharedPreferences.getInt(KEY_COR_TEXTO, corText);
+            corText = sharedPreferences.getInt(KEY_COR_TEXTO, Context.MODE_PRIVATE);
         } if (sharedPreferences.getInt(KEY_COR_TEXTO, corText) == 0 ) {
             sharedPreferences.edit().putInt(KEY_COR_TEXTO, -15920896).commit();
-            corText = sharedPreferences.getInt(KEY_COR_TEXTO, corText);
+            corText = sharedPreferences.getInt(KEY_COR_TEXTO, Context.MODE_PRIVATE);
         }
         return corText;
     }
 
     public int ativarLeitorTela(){
         if(sharedPreferences.getInt(KEY_ATIVAR_LEITOR_TELA, ativarOLeitorTela) != 0) {
-            ativarOLeitorTela = sharedPreferences.getInt(KEY_ATIVAR_LEITOR_TELA, ativarOLeitorTela);
+            ativarOLeitorTela = sharedPreferences.getInt(KEY_ATIVAR_LEITOR_TELA, Context.MODE_PRIVATE);
         }
         return ativarOLeitorTela;
     }
@@ -91,14 +92,14 @@ public abstract class AbstractConfigAllActivity extends AppCompatActivity implem
 
     public float velocidadeFala(){
         if(sharedPreferences.getFloat(KEY_VELOCIDADE_FALA, velocidadeFala) != 0) {
-            velocidadeFala = sharedPreferences.getFloat(KEY_VELOCIDADE_FALA, velocidadeFala);
+            velocidadeFala = sharedPreferences.getFloat(KEY_VELOCIDADE_FALA, Context.MODE_PRIVATE);
         }
         return velocidadeFala;
     }
 
     public float tomFala(){
         if(sharedPreferences.getFloat(KEY_TOM_FALA, tomFala) != 0) {
-            tomFala = sharedPreferences.getFloat(KEY_TOM_FALA, tomFala);
+            tomFala = sharedPreferences.getFloat(KEY_TOM_FALA, Context.MODE_PRIVATE);
         }
         return tomFala;
     }

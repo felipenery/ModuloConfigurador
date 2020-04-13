@@ -27,6 +27,7 @@ public class AtalhoAcessibilidade extends AppCompatActivity {
         iconeBotao = (ImageView) findViewById(R.id.botaoIconeId);
 
         ListView lv = (ListView) findViewById(R.id.listViewId);
+
         ArrayList<String> arrayContry = new ArrayList<>();
         arrayContry.addAll(Arrays.asList(getResources().getStringArray(R.array.array)));
 
